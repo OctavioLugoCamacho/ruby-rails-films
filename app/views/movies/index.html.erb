@@ -1,5 +1,10 @@
+<h1>Movies</h1>
+
 <ul>
-  <% @movies.each do |movie| %>
-    <li><%= movie %></li>
-  <% end %>
+<% @movies.each do |movie| %>
+  <li>
+    <strong><%= movie.title %></strong> (<%= movie.rating %>):
+    <%= number_to_currency(movie.total_gross, precision: 0) %>
+  </li>
+<% end %>
 </ul>
