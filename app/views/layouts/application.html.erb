@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flix</title>
+    <title>Super-Heroic Flix</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1>Flix</h1>
+    </header>
+
+    <div class="content">
+      <%= yield %>
+    </div>
+
+    <footer>
+      <p>
+        Copyright &copy; 2021-<%= Time.now.year %>
+        <%= link_to 'Octavio Lugo Camacho','https://octaviolugocamacho.github.io/' %>
+      </p>
+    </footer>
   </body>
 </html>
