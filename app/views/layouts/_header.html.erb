@@ -7,12 +7,21 @@
       </li>
     </ul>
     <ul class="right">
-      <li>
-        <%= link_to "Sign In", signin_path, class: "button" %>
-      </li>
-      <li>
-        <%= link_to "Sign Up", signup_path, class: "button" %>
-      </li>
+      <% if current_user %>
+        <li>
+          <%= link_to current_user.name, current_user %>
+        </li>
+        <li>
+          <%= link_to "Account Settings", edit_user_path(current_user) %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "Sign In", signin_path, class: "button" %>
+        </li>
+        <li>
+          <%= link_to "Sign Up", signup_path, class: "button" %>
+        </li>
+      <% end %>
     </ul>
   </nav>
 </header>
