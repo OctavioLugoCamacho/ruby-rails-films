@@ -14,6 +14,10 @@
         <li>
           <%= link_to "Account Settings", edit_user_path(current_user) %>
         </li>
+        <li>
+          <%= link_to "Sign Out", session_path, method: :delete,
+            class: "button" %>
+        </li>
       <% else %>
         <li>
           <%= link_to "Sign In", signin_path, class: "button" %>
