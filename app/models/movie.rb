@@ -2,6 +2,9 @@ class Movie < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :fans, through: :favorites, source: :user
+  has_many :characterizations, dependent: :destroy
+  has_many :genres, through: :characterizations
+
   RATINGS = %w(G PG PG-13 R NC-17)
   validates :title, :released_on, :duration, presence: true
   validates :description, length: { minimum: 25 }

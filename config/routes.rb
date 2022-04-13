@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :genres
   root "movies#index"
   resources :movies do
     resources :reviews
