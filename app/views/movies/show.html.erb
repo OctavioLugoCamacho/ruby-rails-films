@@ -38,13 +38,21 @@
   </div>
 </section>
 <aside>
-<% if @fans.present? %>
+  <% if @fans.present? %>
     <h4>Fans</h4>
     <ul>
       <% @fans.each do |user| %>
         <li>
           <%= link_to user.name, user %>
         </li>
+      <% end %>
+    </ul>
+  <% end %>
+  <% if @genres.present? %>
+    <h4>Genres</h4>
+    <ul>
+      <% @genres.each do |g| %>
+        <li><%= g.name %></li>
       <% end %>
     </ul>
   <% end %>
